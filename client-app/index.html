@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <title>Offline Client Playground</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+        }
+    </style>
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+<div class="navbar navbar-fixed-top" xmlns="http://www.w3.org/1999/html">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="brand" href="#">Offline Client Playground</a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="row">
+        <div class="span4">
+            <div class="well">
+                <a id="reset" href="#" class="btn"><i class="icon-trash"></i> Reset Local Database</a>
+
+                <p>Delete all rows from the employee table in the local SQLite database. Does not require network
+                connectivity.</p>
+            </div>
+        </div>
+        <div class="span4">
+            <div class="well">
+                <a id="sync"  href="#" class="btn"><i class="icon-refresh"></i> Sync with Server</a>
+                <p>Get changes from server and update local database accordingly. Requires network connectivity.</p>
+            </div>
+        </div>
+        <div class="span4">
+            <div class="well">
+                <a id="render" href="#" class="btn"><i class="icon-list"></i> Render List</a>
+
+                <p>Render the employee list using the data from the local SQLite database. Does not require network
+                connectivity.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="span12">
+            Log:
+            <textarea id="log" style="width:99%" rows="5"></textarea>
+            <a id="clearLog" href="#" class="btn"><i class="icon-remove"></i> Clear</a>
+        </div>
+    </div>
+
+    <br/>
+
+    <div class="row">
+        <div class=span12>
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>id</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Title</th>
+                    <th>Phone</th>
+                    <th>Deleted</th>
+                    <th>Last Modified</th>
+                </tr>
+                </thead>
+                <tbody id="list"></tbody>
+            </table>
+
+        </div>
+    </div>
+
+</div>
+
+<script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="app.js"></script>
+
+</body>
+</html>
