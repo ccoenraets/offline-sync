@@ -16,7 +16,7 @@ window.EmployeeView = Backbone.View.extend({
     },
 
     save: function () {
-        this.model.set({firstName: $('#firstName').val(), lastName: $('#lastName').val(), title: $('#title').val()});
+        this.model.set({firstName: $('#firstName').val(), lastName: $('#lastName').val(), title: $('#title').val(), officePhone: $('#phone').val()});
         if (this.model.isNew()) {
             app.employees.create(this.model, {
                 success: function (model) {
